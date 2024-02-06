@@ -18,21 +18,37 @@
       --secondaryText: #fefefd;
       --accent: #73cb9c;
       --mutedText: #8d8d8d;
-      --primaryFont: 'Your Chosen Font', sans-serif;
     }
     body {
-      font-family: var(--primaryFont);
+      font-family: Arial, Helvetica, sans-serif;
     }
+    header.scrolled {
+      height: 100px; /* Adjust the height as needed */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a subtle effect */
+    }   
+
+    header.scrolled nav {
+      padding: 4px 16px; /* Adjust padding as needed */
+    }
+
+    header.scrolled img {
+      max-width: 100%; /* Ensure the logo stays within the smaller space */
+    }
+
+    header.scrolled a {
+      font-size: 14px; /* Adjust font size as needed */
+    }
+
   </style>
 
   <div class="bg-white">
 
-    <header class="absolute inset-x-0 top-0 z-50" style="background-color: var(--primaryBackground);">
+    <header class="fixed top-0 inset-x-0 z-50 bg-white transition-all duration-300" style="background-color: var(--primaryBackground);">
       <nav class="flex items-center justify-between p-6 lg:px-32" aria-label="Global">
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">entroptic solutions software</span>
-            <img class="h-auto w-40" src="EntropicSolutionsLogoMed.jpg" alt="Entropic Solutions Logo">
+            <img class="h-auto w-20 lg:w-40" src="EntropicSolutionsLogoMed.jpg" alt="Entropic Solutions Logo">
           </a>
         </div>
         <div class="lg:flex lg:gap-x-12">
@@ -47,20 +63,22 @@
     <div class="relative isolate px-6 pt-14 lg:px-8" style="background-color: var(--primaryBackground);">
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true" style="background: linear-gradient(to top right, var(--accent), var(--primaryBackground));"></div>
       <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56" style="background-color: var(--primaryBackground);">
+        <!-- 
         <div class="hidden sm:mb-8 sm:flex sm:justify-center">
           <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
             Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
           </div>
         </div>
+        -->
         <div class="text-center">
-          <h1 class="text-4xl font-bold tracking-tight" style="color: var(--primaryText);">Data to enrich your online business</h1>
-          <p class="mt-6 text-lg leading-8" style="color: var(--primaryText);">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+          <h1 class="text-4xl font-bold tracking-tight" style="color: var(--primaryText);">Elevate Your Digital Experience</h1>
+          <p class="mt-6 text-lg leading-8" style="color: var(--primaryText);">Discover a new realm of software solutions where innovation meets a personal touch. Our small team is dedicated to crafting customized experiences for each client, ensuring your vision becomes a digital reality.</p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
             <a href="#" style="background-color: var(--secondaryBackground); color: var(--secondaryText);"
             class="rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondaryBackground"
-            onmouseover="this.style.backgroundColor='#73cb9c'"
+            onmouseover="this.style.backgroundColor='var(--accent)'"
             onmouseout="this.style.backgroundColor='var(--secondaryBackground)'">
-           Get started
+              Get started
             </a>
             <a href="#" class="text-sm font-semibold leading-6" style="color: var(--primaryText);">Learn more <span aria-hidden="true">→</span></a>
           </div>
@@ -68,7 +86,65 @@
       </div>
       <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true" style="background: linear-gradient(to top right, var(--accent), var(--primaryBackground));"></div>
     </div>
+
+<!-- Modify your existing About Us section -->
+<section class="flex flex-col lg:flex-row items-center justify-center py-16" style="background: linear-gradient(to right, var(--secondaryBackground), #f8f8f8);">
+  <div class="lg:w-1/2 lg:mr-8 p-16">
+    <div class="text-left">
+      <h2 class="text-3xl font-bold text-black mb-8">About Us</h2>
+      <p class="text-lg text-gray-800 leading-loose">
+        Welcome to Entropic Solutions! We are a dynamic team passionate about crafting innovative digital solutions that elevate your digital experience. Our mission is to provide personalized and cutting-edge software solutions to meet the unique needs of our clients.
+      </p>
+      <p class="text-lg text-gray-800 mt-4 leading-loose">
+        Whether you're looking for custom software development or creative design, we have the expertise to turn your vision into a digital reality. Get to know the individuals behind our company and the driving force behind our success.
+      </p>
+    </div>
+  </div>
+  <div class="lg:w-1/2 p-16">
+    <img class="h-auto w-3/4 lg:w-full" src="computer 2 guys.jpg" alt="Surprised Face Image">
+  </div>
+</section>
+
+
+
+
+
+
+
+    
+    
+
+    <section class="flex items-center justify-center h-screen bg-gray-200">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">Meet Our Team</h2>
+    
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Team Member 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="me.jpeg" alt="me" class="w-32 h-32 mx-auto mb-4 rounded-full">
+            <h3 class="text-xl font-semibold">Ryan Triplett</h3>
+            <p class="text-gray-600">Co-Founder & CEO</p>
+          </div>
+    
+          <!-- Team Member 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <img src="cij.jpg" alt="Cij" class="w-32 h-32 mx-auto mb-4 rounded-full">
+            <h3 class="text-xl font-semibold">Cijin</h3>
+            <p class="text-gray-600">Co-Founder & CTO</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
   </div>
 
+  <script>
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 0);
+    });
+  </script>
 </body>
 </html>
