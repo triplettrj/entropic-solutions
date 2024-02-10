@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
 </head>
 
 <body class="bg-gray-100">
@@ -43,6 +41,25 @@
       font-size: 14px; /* Adjust font size as needed */
     }
 
+  .custom-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+  }
+  .owl-prev,
+  .owl-next { 
+    background-color: rgba(255, 255, 255, 0.5); /* Button background color */
+    color: #000; /* Button text color */
+    border: none;
+    border-radius: 50%; /* Make buttons circular */
+    padding: 10px;
+    cursor: pointer;
+  }
   </style>
 
   <div class="bg-white">
@@ -109,51 +126,106 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-    
-    
-
-    <section class="flex items-center justify-center h-screen bg-gray-200">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-8">Meet Our Team</h2>
-    
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Team Member 1 -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <img src="me.jpeg" alt="me" class="w-32 h-32 mx-auto mb-4 rounded-full">
-            <h3 class="text-xl font-semibold">Ryan Triplett</h3>
-            <p class="text-gray-600">Co-Founder & CEO</p>
-          </div>
-    
-          <!-- Team Member 2 -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <img src="cij.jpg" alt="Cij" class="w-32 h-32 mx-auto mb-4 rounded-full">
-            <h3 class="text-xl font-semibold">Cijin</h3>
-            <p class="text-gray-600">Co-Founder & CTO</p>
-          </div>
-        </div>
+<section class="flex items-center justify-center h-screen bg-gray-200">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">Meet Our Team</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Team Member 1 -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <img src="me.jpeg" alt="me" class="w-32 h-32 mx-auto mb-4 rounded-full">
+        <h3 class="text-xl font-semibold">Ryan Triplett</h3>
+        <p class="text-gray-600">Co-Founder & CEO</p>
       </div>
-    </section>
-
-
-
-
-
+      <!-- Team Member 2 -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <img src="cij.jpg" alt="Cij" class="w-32 h-32 mx-auto mb-4 rounded-full">
+        <h3 class="text-xl font-semibold">Cijin</h3>
+        <p class="text-gray-600">Co-Founder & CTO</p>
+      </div>
+    </div>
   </div>
+</section>
 
-  <script>
-    window.addEventListener('scroll', function () {
-      var header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 0);
+<section class="trusted-by">
+  <div class="owl-carousel owl-theme">
+    <div class="item">
+      <img src="momcologo.jpg" alt="Your mom's company">
+    </div>
+    <div class="item">
+      <img src="krubirdlogo.jpg" alt="Bird's Muay Thai Gym">
+    </div>
+    <div class="item">
+      <img src="ioignitionlogo.svg" alt="Cij's Company">
+    </div>
+    <div class="item">
+      <img src="momcologo.jpg" alt="Your mom's company">
+    </div>
+    <div class="item">
+      <img src="krubirdlogo.jpg" alt="Bird's Muay Thai Gym">
+    </div>
+    <div class="item">
+      <img src="ioignitionlogo.svg" alt="Cij's Company">
+    </div>
+    <div class="item">
+      <img src="momcologo.jpg" alt="Your mom's company">
+    </div>
+    <div class="item">
+      <img src="krubirdlogo.jpg" alt="Bird's Muay Thai Gym">
+    </div>
+    <div class="item">
+      <img src="ioignitionlogo.svg" alt="Cij's Company">
+    </div>
+    <!-- Add more company logos as needed -->
+  </div>
+  <div class="custom-nav">
+    <button class="owl-prev">Prev</button>
+    <button class="owl-next">Next</button>
+  </div>
+</section>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  window.addEventListener('scroll', function () {
+    var header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 0);
+  });
+
+  $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 200, // Adjust margin as needed
+      autoplay: true, // Enable autoplay
+      autoplayTimeout: 1000, // Set autoplay interval in milliseconds (e.g., 3000ms = 3 seconds)
+      autoplayHoverPause: true, // Pause autoplay when hovering over the carousel
+      responsiveClass:true,
+      responsive:{
+        0:{
+          items: 2,
+          nav: false
+        },
+        600:{
+          items: 4,
+          nav: false
+        },
+        1000:{
+          items: 6,
+          nav: false,
+          loop: false
+        }
+      }
     });
-  </script>
+
+    $(".owl-next").click(function() {
+      $(".owl-carousel").trigger('next.owl.carousel');
+    });
+    $(".owl-prev").click(function() {
+      $(".owl-carousel").trigger('prev.owl.carousel');
+    });
+  });
+</script>
+
 </body>
 </html>
